@@ -1,0 +1,5 @@
+app/cache
+.phalcon
+public/cache
+app/config/config.php
+vendor

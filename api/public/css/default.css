@@ -1,0 +1,95 @@
+.span10{
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+}
+
+.panel {
+    padding: 14px;
+    margin: 14px;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    width: 550px;
+    max-width: 80%;
+    position: relative;
+}
+
+.panel .closable {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: red;
+    font-size: 18px;
+}
+
+.panel .closable:hover {
+    text-decoration: none;
+}
+
+label.control-label, label.custom-label {
+    font-weight: bold;
+}
+
+.form-horizontal .control-group.required .control-label:after {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size: 5px;
+    top:-8px;
+    content: "\f069";
+    color: red;
+    position: relative;
+    margin-left: 2px;
+}
+
+.form-group input,  .form-group textarea {
+    min-width: 30%;
+}
+
+.form-group select {
+    min-width: 31%;
+}
+
+body .margin-0 {
+    margin: 0;
+}
+
+ul.nav {
+    text-transform: uppercase;
+}
+
+ul.submenu {
+    list-style: none;
+    margin: 0;
+}
+
+ul.submenu > li {
+    width: 100%;
+    position: relative;
+}
+
+ul.submenu > li > a i.fa {
+    position: relative;
+    left: -5px;
+}
+
+ul.submenu > li:hover {
+
+}
+
+ul.submenu > li > a {
+    border: 1px solid #ddd;
+    border-top: 0;
+    display: block;
+    padding: 8px 12px;
+    line-height: 20px;
+    padding-left: 24px;
+}
+
+ul.submenu > li > a:hover {
+    z-index: 2;
+    border-color: #ddd;
+    background-color: #eee;
+    text-decoration: none;
+}

@@ -1,0 +1,93 @@
+$body-background-color: #EDEDDC;
+
+html, body {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+html, body, .x-body, .x-column-header, .x-menu-item-text-default {
+	font-family: 'PT Sans', sans-serif;
+	.md-toolbar-tools {
+		font-weight: 600;
+	}
+}
+
+html[ng-app].ng-scope {
+	font-family: 'Roboto Slab', serif;
+	overflow-x: hidden;
+	height: 100%;
+}
+
+body {
+	background-color: $body-background-color !important;
+}
+
+.display-none {
+	display: none !important;
+}
+
+div.page.container {
+	md-card {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+[model-list] {
+	table {
+		border-collapse: collapse;
+		table-layout: fixed;
+		width: 100%;
+		th, td {
+			text-align: center;
+			width: 5%;
+		}
+	}
+}
+
+.car-grid-img {
+	//width: 110px;
+}
+
+[ui-view="container"] {
+	> md-card#cars-grid {
+		margin-top: 0;
+	}
+	div.x-grid-view {
+		div.x-grid-item-container {
+			table.x-grid-item {
+				width: 100% !important;
+				tr {
+					&.row-width-img {
+						td {
+							> div {
+								height: 90px;
+								width: 1000px;
+								vertical-align:middle;
+								display: table-cell;
+
+								&.x-grid-cell-inner:before {
+									border: 1px solid #FFEFBB;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+md-toolbar {
+	&.md-gray {
+		background-color: #d0d0d0;
+	}
+}
+
+
+
+
+
+

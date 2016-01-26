@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteRule ^liquibase(\/)?$ /liquibase/index.html [L,R]
+RewriteRule ^liquibase(.*)$ /db/liquibase-3.4.1-bin/sdk/javadoc$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(css|js|bootstrap|select2|font-awesome-4\.3\.0|img|images)(\/.+)$ /api/$1$2 [L]
+
+RewriteRule ^(.*)$ /angular/dist/$1
+Options -Indexes
+
+AddDefaultCharset UTF-8

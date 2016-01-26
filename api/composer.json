@@ -1,0 +1,9 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer": "@stable",
+        "phpoffice/phpexcel": ">=1.8.1",
+        "phpunit/phpunit": "^5.0",
+        "phalcon/incubator": "^2.0",
+        "redound/phalcon-rest": "^1.1"
+    }
+}

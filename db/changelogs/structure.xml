@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="sergey (generated)" id="1448477624708-1">
+        <createTable tableName="brands">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-2">
+        <createTable tableName="car_class">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-3">
+        <createTable tableName="car_compl">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(64)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-4">
+        <createTable tableName="car_prices">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="car_id" type="INT"/>
+            <column name="dealer_id" type="INT"/>
+            <column name="import_id" type="INT"/>
+            <column name="usd" remarks="цена в доллрах" type="DOUBLE"/>
+            <column name="eur" remarks="цена в евро" type="DOUBLE"/>
+            <column name="uah" remarks="цена в грн" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-5">
+        <createTable tableName="car_types">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-6">
+        <createTable tableName="cars">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="brand_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="model_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_type_id" type="INT"/>
+            <column name="car_class_id" type="INT"/>
+            <column name="car_compl_id" remarks="комплектация авто" type="INT"/>
+            <column name="drive_types_id" remarks="Тип привода ИД" type="INT"/>
+            <column name="color_finish_id" type="INT"/>
+            <column name="climate_control_id" type="INT"/>
+            <column name="power_type_id" type="INT"/>
+            <column name="power_engine" remarks="Мощность двигателя" type="INT"/>
+            <column name="torque_nm" remarks="Крутящий момент, Н/м" type="INT"/>
+            <column name="seating_capacity" remarks="Колво сидений" type="INT"/>
+            <column name="sticker_emission_id" type="INT"/>
+            <column name="fuel_type_id" remarks="Тип пального" type="INT"/>
+            <column name="color_attachment_id" type="INT"/>
+            <column name="ecological_safety_id" type="INT"/>
+            <column name="fuel_city" remarks="расход топлива в городе, л. на 100 км" type="DOUBLE"/>
+            <column name="fuel_highway" remarks="расход топлива в поселке, л. на 100 км" type="DOUBLE"/>
+            <column name="fuel_combined" remarks="комбинированный расход в л. на 100 км" type="DOUBLE"/>
+            <column name="wheel_id" type="INT"/>
+            <column name="interior_design_id" type="INT"/>
+            <column name="transmission_id" type="INT"/>
+            <column name="model_year" type="YEAR"/>
+            <column name="number_seats" type="INT"/>
+            <column name="doors" remarks="количество дверей" type="INT"/>
+            <column name="power" type="INT"/>
+            <column name="transmission_stage" type="INT"/>
+            <column name="engine_capacity" remarks="обьем двигателя" type="DOUBLE"/>
+            <column name="airbag_count" remarks="количество подушек безопасности" type="INT"/>
+            <column name="is_bluetooth" type="INT"/>
+            <column name="is_automatic_rain_sensor" type="INT"/>
+            <column name="is_cruise_control" type="INT"/>
+            <column name="is_cd_player" type="INT"/>
+            <column name="is_on_board_computer" type="INT"/>
+            <column name="is_sunroof" type="INT"/>
+            <column name="is_isofix" type="INT"/>
+            <column name="is_auxiliary_heating" type="INT"/>
+            <column name="is_multifunction_steering_wheel" type="INT"/>
+            <column name="is_start_stop_system" type="INT"/>
+            <column name="is_central_locking" type="INT"/>
+            <column name="is_electric_wing_mirror" type="INT"/>
+            <column name="is_mp3_interface" type="INT"/>
+            <column name="is_handsfree" type="INT"/>
+            <column name="is_navigation_system" type="INT"/>
+            <column name="is_heated_seats" type="INT"/>
+            <column name="is_tv_radio" type="INT"/>
+            <column name="is_ski_bag" type="INT"/>
+            <column name="is_power_steering" type="INT"/>
+            <column name="is_electric_seat_adjustment" type="INT"/>
+            <column name="is_system_displays_windshield" type="INT"/>
+            <column name="is_power_windows" type="INT"/>
+            <column name="is_abs" type="INT"/>
+            <column name="is_esp" type="INT"/>
+            <column name="is_aytime_running_lights" type="INT"/>
+            <column name="is_traction_control" type="INT"/>
+            <column name="is_immobiliser" type="INT"/>
+            <column name="is_dust_filter" type="INT"/>
+            <column name="is_anti_fog_headlight" type="INT"/>
+            <column name="is_adaptive_cornering_light" type="INT"/>
+            <column name="is_xenon_headlights" type="INT"/>
+            <column name="is_light_sensor" type="INT"/>
+            <column name="is_four_wheel_drive" type="INT"/>
+            <column name="is_parking_aid_front" type="INT"/>
+            <column name="is_rear_parking_sensors" type="INT"/>
+            <column name="is_sport_suspension" type="INT"/>
+            <column name="is_sport_seats" type="INT"/>
+            <column name="is_sports_package" type="INT"/>
+            <column name="is_alloy_wheels" type="INT"/>
+            <column name="is_glass_panoramic_view" type="INT"/>
+            <column name="is_roof_bars" type="INT"/>
+            <column name="is_disabled_access" type="INT"/>
+            <column name="is_trailer_hitch" type="INT"/>
+            <column name="is_damaged" type="INT"/>
+            <column name="description" type="TEXT"/>
+            <column name="general_img" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-7">
+        <createTable tableName="climate_controls">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-8">
+        <createTable tableName="color_attachments">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-9">
+        <createTable tableName="color_finishs">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-10">
+        <createTable tableName="config">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="key" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-11">
+        <createTable tableName="countries">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-12">
+        <createTable tableName="courses">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="currency_type_id" type="INT"/>
+            <column name="date" type="date"/>
+            <column name="usd_cross_cours" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-13">
+        <createTable tableName="currency_types">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="alias" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-14">
+        <createTable tableName="dealers">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-15">
+        <createTable tableName="drive_types">
+            <column name="id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(64)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-16">
+        <createTable tableName="ecological_safeties">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-17">
+        <createTable tableName="fuel_types">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-18">
+        <createTable tableName="imports">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="file_path" remarks="путь к файлу импорта" type="VARCHAR(255)"/>
+            <column name="date" remarks="дата импорта" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-19">
+        <createTable tableName="interior_designs">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-20">
+        <createTable tableName="models">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="brand_id" type="INT"/>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-21">
+        <createTable tableName="power_types">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-22">
+        <createTable tableName="sticker_emissions">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-23">
+        <createTable tableName="transmissions">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-24">
+        <createTable tableName="wheels">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(45)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-25">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="drive_types"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-26">
+        <addUniqueConstraint columnNames="id" constraintName="id" tableName="car_compl"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-27">
+        <createIndex indexName="car_compl_id_2" tableName="cars">
+            <column name="car_compl_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-28">
+        <createIndex indexName="drive_types_id" tableName="cars">
+            <column name="drive_types_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-29">
+        <createIndex indexName="index10" tableName="cars">
+            <column name="fuel_type_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-30">
+        <createIndex indexName="index11" tableName="cars">
+            <column name="color_attachment_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-31">
+        <createIndex indexName="index12" tableName="cars">
+            <column name="ecological_safety_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-32">
+        <createIndex indexName="index14" tableName="cars">
+            <column name="wheel_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-33">
+        <createIndex indexName="index15" tableName="cars">
+            <column name="interior_design_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-34">
+        <createIndex indexName="index16" tableName="cars">
+            <column name="transmission_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-35">
+        <createIndex indexName="index2" tableName="car_prices">
+            <column name="car_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-36">
+        <createIndex indexName="index2" tableName="cars">
+            <column name="brand_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-37">
+        <createIndex indexName="index2" tableName="courses">
+            <column name="currency_type_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-38">
+        <createIndex indexName="index3" tableName="car_prices">
+            <column name="dealer_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-39">
+        <createIndex indexName="index3" tableName="cars">
+            <column name="model_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-40">
+        <createIndex indexName="index3" tableName="courses">
+            <column name="date"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-41">
+        <createIndex indexName="index4" tableName="car_prices">
+            <column name="import_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-42">
+        <createIndex indexName="index4" tableName="cars">
+            <column name="car_type_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-43">
+        <createIndex indexName="index5" tableName="cars">
+            <column name="car_class_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-44">
+        <createIndex indexName="index6" tableName="cars">
+            <column name="color_finish_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-45">
+        <createIndex indexName="index7" tableName="cars">
+            <column name="climate_control_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-46">
+        <createIndex indexName="index8" tableName="cars">
+            <column name="power_engine"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-47">
+        <createIndex indexName="index9" tableName="cars">
+            <column name="sticker_emission_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-48">
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="car_prices" constraintName="car_prices_fk_car_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="cars"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-49">
+        <addForeignKeyConstraint baseColumnNames="dealer_id" baseTableName="car_prices" constraintName="car_prices_fk_dealer_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="dealers"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-50">
+        <addForeignKeyConstraint baseColumnNames="import_id" baseTableName="car_prices" constraintName="car_prices_fk_import_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="imports"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-51">
+        <addForeignKeyConstraint baseColumnNames="brand_id" baseTableName="cars" constraintName="cars_fk_brands" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="brands"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-52">
+        <addForeignKeyConstraint baseColumnNames="car_class_id" baseTableName="cars" constraintName="cars_fk_class" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="car_class"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-53">
+        <addForeignKeyConstraint baseColumnNames="climate_control_id" baseTableName="cars" constraintName="cars_fk_climate_control" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="climate_controls"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-54">
+        <addForeignKeyConstraint baseColumnNames="color_attachment_id" baseTableName="cars" constraintName="cars_fk_color_attachment" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="color_attachments"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-55">
+        <addForeignKeyConstraint baseColumnNames="color_finish_id" baseTableName="cars" constraintName="cars_fk_color_finish" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="color_finishs"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-56">
+        <addForeignKeyConstraint baseColumnNames="ecological_safety_id" baseTableName="cars" constraintName="cars_fk_ecological_safeti" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="ecological_safeties"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-57">
+        <addForeignKeyConstraint baseColumnNames="fuel_type_id" baseTableName="cars" constraintName="cars_fk_fuel_type" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="fuel_types"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-58">
+        <addForeignKeyConstraint baseColumnNames="interior_design_id" baseTableName="cars" constraintName="cars_fk_interior_design" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="interior_designs"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-59">
+        <addForeignKeyConstraint baseColumnNames="model_id" baseTableName="cars" constraintName="cars_fk_models" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="models"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-60">
+        <addForeignKeyConstraint baseColumnNames="sticker_emission_id" baseTableName="cars" constraintName="cars_fk_sticker_emmision" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="sticker_emissions"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-61">
+        <addForeignKeyConstraint baseColumnNames="transmission_id" baseTableName="cars" constraintName="cars_fk_transmission" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="transmissions"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-62">
+        <addForeignKeyConstraint baseColumnNames="car_type_id" baseTableName="cars" constraintName="cars_fk_types" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="car_types"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-63">
+        <addForeignKeyConstraint baseColumnNames="wheel_id" baseTableName="cars" constraintName="cars_fk_weel" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="wheels"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-64">
+        <addForeignKeyConstraint baseColumnNames="car_compl_id" baseTableName="cars" constraintName="cars_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="car_compl"/>
+    </changeSet>
+    <changeSet author="sergey (generated)" id="1448477624708-65">
+        <addForeignKeyConstraint baseColumnNames="currency_type_id" baseTableName="courses" constraintName="courses_fk_type_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="currency_types"/>
+    </changeSet>
+</databaseChangeLog>

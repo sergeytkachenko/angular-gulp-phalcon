@@ -1,0 +1,17 @@
+<section>
+	<h3>{{filterHeader}}</h3>
+	<md-button
+		class="md-raised md-mini md-primary {{activeClass}}"
+		ng-class="filterCircle? 'md-fab' : ''"
+		ng-click="reset()">
+		Всі
+	</md-button>
+	<md-button
+		class=" md-raised md-mini"
+		ng-class="filterCircle? 'md-fab' : ''"
+		ng-repeat="filter in filterStore"
+		data-id="{{filter.get(filterId)}}"
+		ng-click="click(filter.get(filterId))">
+		{{ filter.get(filterTitle) }}
+	</md-button>
+</section>
