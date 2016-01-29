@@ -5,63 +5,6 @@
 // bower:scss
 // endbower
 
-[layout=row] {
-	flex-direction: row;
-}
-
-.browsehappy {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
-}
-
-.thumbnail {
-	height: 200px;
-
-	img.pull-right {
-		width: 50px;
-	}
-}
-
-md-toolbar.md-default-theme {
-	background-color: #CC2262;
-}
-
-section.jumbotron {
-	margin-bottom: 30px;
-	padding: 1px 30px;
-	background-color: #5aadbb;
-	text-align: center;
-
-	color: white;
-
-	h1 {
-		font-size: 3em;
-	}
-}
-
-.techs {
-	display: flex;
-	flex-flow: row wrap;
-
-	md-card {
-		width: 30%;
-
-		img.pull-right {
-			float: right;
-			width: 50px;
-		}
-	}
-}
-
-md-content {
-	background-color: inherit;
-
-	md-card {
-		padding: 25px 30px 0 30px;
-	}
-}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject

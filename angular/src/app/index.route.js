@@ -6,44 +6,8 @@ function routerConfig($stateProvider, $urlRouterProvider) {
 			abstract: true,
 			views: {
 				'nav@': {
-					templateUrl: 'app/components/nav.html'
-				},
-				'filter@': {
-					templateUrl: 'app/main/filter/filter.html',
-					controller: 'FilterController'
+					templateUrl: ''
 				}
-			}
-		})
-
-		.state('root.main', {
-			url: '/',
-			views: {
-				'container@': {
-					templateUrl: 'app/main/main.html',
-					controller: 'MainController'
-				}
-			}
-		})
-
-		.state('root.import', {
-			url: '/import',
-			views: {
-				'container@': {
-					templateUrl: 'app/import/import.html',
-					controller: 'ImportController'
-				},
-				'filter@': ''
-			}
-		})
-
-		.state('root.import.accept', {
-			url: '/accept',
-			views: {
-				'container@': {
-					templateUrl: 'app/import/accept/accept.html',
-					controller: 'ImportAcceptController'
-				},
-				'filter@': ''
 			}
 		});
 

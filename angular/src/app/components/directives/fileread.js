@@ -2,12 +2,12 @@ class FileRead {
 	/*@ngInject*/
 	constructor() {
 		this.scope =  {
-			fileread: "="
+			fileread: '='
 		};
 	}
 
-	link(scope, element, attributes) {
-		element.bind("change", function (changeEvent) {
+	link(scope, element) {
+		element.bind('change', function (changeEvent) {
 			var reader = new FileReader();
 			reader.onload = function (loadEvent) {
 				scope.$apply(function () {
