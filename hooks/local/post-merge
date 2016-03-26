@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+PROJECT_DIR="/Users/s/sites/autocapital"
+
+rm -rf "$PROJECT_DIR"/api/vendor
+rm -rf "$PROJECT_DIR"/api/composer.lock
+cd "$PROJECT_DIR"/api && php composer.phar install
+cd "$PROJECT_DIR"/db && sh import.sh
